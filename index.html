@@ -2,21 +2,58 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Formulario embebido</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Solicitudes y Consultas – Talento Humano</title>
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
+    /* Estilos para la pantalla de carga */
+    #cargando {
+      text-align: center;
+      font-family: sans-serif;
+      padding: 1rem;
+      font-size: 1.2rem;
+      color: #666;
     }
+
+    /* Estilos para el iframe */
     iframe {
       width: 100%;
-      height: 100%;
+      min-height: 90vh;
       border: none;
+    }
+
+    /* Estilos para pantallas pequeñas */
+    @media (max-width: 600px) {
+      iframe {
+        min-height: 100vh;
+      }
+    }
+
+    /* Estilos para el header */
+    header {
+      background: #607d3b;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
     }
   </style>
 </head>
-<body>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSews_XjFsthVBCqMr5X5gQemup2JrKXUPHx0fGUNLko7ZlahA/viewform?embedded=true"></iframe>
+<body style="background: #f9f9f9; margin: 0; font-family: Arial;">
+  <header>
+    <h1>Formulario de Solicitudes y Consultas – Talento Humano</h1>
+  </header>
+  
+  <!-- Pantalla de carga -->
+  <div id="cargando">Cargando formulario...</div>
+
+  <!-- Iframe para el formulario de Google -->
+  <iframe onload="document.getElementById('cargando').style.display='none'"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSews_XjFsthVBCqMr5X5gQemup2JrKXUPHx0fGUNLko7ZlahA/viewform?embedded=true"
+          frameborder="0" allowfullscreen>
+  </iframe>
 </body>
 </html>
